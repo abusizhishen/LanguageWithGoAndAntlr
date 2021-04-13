@@ -2,7 +2,7 @@ package src
 
 import (
 	"fmt"
-	"github.com/abusizhishen/ruleEngine/parser"
+	"github.com/abusizhishen/LanguageWithGoAndAntlr/parser"
 )
 
 func (v *RuleEngineVisitor) VisitSTRING(ctx *parser.STRINGContext) interface{} {

@@ -2,7 +2,7 @@ package src
 
 import (
 	"fmt"
-	"github.com/abusizhishen/ruleEngine/parser"
+	"github.com/abusizhishen/LanguageWithGoAndAntlr/parser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"reflect"
 	"strconv"

@@ -1,4 +1,4 @@
-module github.com/abusizhishen/ruleEngine
+module github.com/abusizhishen/LanguageWithGoAndAntlr
 
 go 1.15
 

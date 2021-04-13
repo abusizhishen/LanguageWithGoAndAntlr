@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/abusizhishen/ruleEngine/parser"
-	"github.com/abusizhishen/ruleEngine/src"
+	"github.com/abusizhishen/LanguageWithGoAndAntlr/parser"
+	"github.com/abusizhishen/LanguageWithGoAndAntlr/src"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"github.com/c-bata/go-prompt"
 	"log"

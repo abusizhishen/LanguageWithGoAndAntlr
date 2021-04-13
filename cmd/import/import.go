@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/abusizhishen/ruleEngine/src"
+	"github.com/abusizhishen/LanguageWithGoAndAntlr/src"
 )
 
 var rule string
