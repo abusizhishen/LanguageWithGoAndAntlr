@@ -69,12 +69,6 @@ func (s *BaseRuleListener) EnterITEMCOMP(ctx *ITEMCOMPContext) {}
 // ExitITEMCOMP is called when production ITEMCOMP is exited.
 func (s *BaseRuleListener) ExitITEMCOMP(ctx *ITEMCOMPContext) {}
 
-// EnterKey is called when production key is entered.
-func (s *BaseRuleListener) EnterKey(ctx *KeyContext) {}
-
-// ExitKey is called when production key is exited.
-func (s *BaseRuleListener) ExitKey(ctx *KeyContext) {}
-
 // EnterNUM is called when production NUM is entered.
 func (s *BaseRuleListener) EnterNUM(ctx *NUMContext) {}
 
@@ -194,6 +188,12 @@ func (s *BaseRuleListener) EnterReturnStatement(ctx *ReturnStatementContext) {}
 
 // ExitReturnStatement is called when production returnStatement is exited.
 func (s *BaseRuleListener) ExitReturnStatement(ctx *ReturnStatementContext) {}
+
+// EnterMapKey is called when production mapKey is entered.
+func (s *BaseRuleListener) EnterMapKey(ctx *MapKeyContext) {}
+
+// ExitMapKey is called when production mapKey is exited.
+func (s *BaseRuleListener) ExitMapKey(ctx *MapKeyContext) {}
 
 // EnterPair is called when production pair is entered.
 func (s *BaseRuleListener) EnterPair(ctx *PairContext) {}

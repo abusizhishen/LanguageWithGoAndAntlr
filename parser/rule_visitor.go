@@ -33,7 +33,6 @@ type RuleVisitor interface {
 	VisitITEMCOMP(ctx *ITEMCOMPContext) interface{}
 
 	// Visit a parse tree produced by RuleParser#key.
-	VisitKey(ctx *KeyContext) interface{}
 
 	// Visit a parse tree produced by RuleParser#NUM.
 	VisitNUM(ctx *NUMContext) interface{}

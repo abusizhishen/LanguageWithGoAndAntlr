@@ -40,10 +40,6 @@ func (v *BaseRuleVisitor) VisitITEMCOMP(ctx *ITEMCOMPContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseRuleVisitor) VisitKey(ctx *KeyContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseRuleVisitor) VisitNUM(ctx *NUMContext) interface{} {
 	return v.VisitChildren(ctx)
 }

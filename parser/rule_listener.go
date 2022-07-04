@@ -32,9 +32,6 @@ type RuleListener interface {
 	// EnterITEMCOMP is called when entering the ITEMCOMP production.
 	EnterITEMCOMP(c *ITEMCOMPContext)
 
-	// EnterKey is called when entering the key production.
-	EnterKey(c *KeyContext)
-
 	// EnterNUM is called when entering the NUM production.
 	EnterNUM(c *NUMContext)
 
@@ -95,6 +92,9 @@ type RuleListener interface {
 	// EnterReturnStatement is called when entering the returnStatement production.
 	EnterReturnStatement(c *ReturnStatementContext)
 
+	// EnterMapKey is called when entering the mapKey production.
+	EnterMapKey(c *MapKeyContext)
+
 	// EnterPair is called when entering the pair production.
 	EnterPair(c *PairContext)
 
@@ -139,9 +139,6 @@ type RuleListener interface {
 
 	// ExitITEMCOMP is called when exiting the ITEMCOMP production.
 	ExitITEMCOMP(c *ITEMCOMPContext)
-
-	// ExitKey is called when exiting the key production.
-	ExitKey(c *KeyContext)
 
 	// ExitNUM is called when exiting the NUM production.
 	ExitNUM(c *NUMContext)
@@ -202,6 +199,9 @@ type RuleListener interface {
 
 	// ExitReturnStatement is called when exiting the returnStatement production.
 	ExitReturnStatement(c *ReturnStatementContext)
+
+	// ExitMapKey is called when exiting the mapKey production.
+	ExitMapKey(c *MapKeyContext)
 
 	// ExitPair is called when exiting the pair production.
 	ExitPair(c *PairContext)
