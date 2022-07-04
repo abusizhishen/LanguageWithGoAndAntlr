@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	input, err := antlr.NewFileStream("test.rule")
+	input, err := antlr.NewFileStream("test.i")
 	if err != nil {
 		panic(err)
 	}
@@ -18,7 +18,7 @@ func main() {
 
 	p := parser.NewRuleParser(tokens)
 	v := src.NewVisitor(data)
-	v.SetFun("add", func(a,b float64) float64{return a+b})
+	v.SetFun("add", func(a, b float64) float64 { return a + b })
 	result := p.Init().Accept(v)
 
 	fmt.Println("result: ", result)

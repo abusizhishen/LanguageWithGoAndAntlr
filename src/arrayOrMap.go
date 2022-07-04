@@ -7,7 +7,7 @@ import (
 )
 
 func (v *RuleEngineVisitor) VisitGetMapOrArrayValue(ctx *parser.GetMapOrArrayValueContext) interface{} {
-	fmt.Println("VisitGetMapOrArrayValue:", ctx.GetText())
+	//fmt.Println("VisitGetMapOrArrayValue:", ctx.GetText())
 
 	ctx.Identify().Accept(v)
 	for _, key := range ctx.AllIDENTIFY() {

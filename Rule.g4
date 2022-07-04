@@ -133,7 +133,7 @@ pair: mapKey=Str ':' valueType;
 mapValue
     :'{' (pair (',' pair)*)? '}'
     ;
-getMapOrArrayValue:identify ('[' IDENTIFY ']')+;
+getMapOrArrayValue:identify ('[' IDENTIFY|Str|NUM ']')+;
 funCall: identify'(' valueType (',' valueType)* ')';
 
 array:'[' (valueType (',' valueType)*)? ']';
