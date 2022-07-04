@@ -44,7 +44,7 @@ func (v *RuleEngineVisitor) HandlerMap() interface{} {
 func (v *RuleEngineVisitor) VisitPair(ctx *parser.PairContext) interface{} {
 	fmt.Println("VisitPair:", ctx.GetText())
 
-	origin := ctx.GetMapKey().GetText()
+	origin := ctx.MapKey().GetText()
 	key := origin[1 : len(origin)-1]
 	v.push(key)
 	ctx.ValueType().Accept(v)

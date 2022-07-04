@@ -19,6 +19,13 @@ func main() {
 	p := parser.NewRuleParser(tokens)
 	v := src.NewVisitor(data)
 	v.SetFun("add", func(a, b float64) float64 { return a + b })
+	v.SetFun("print", func(args ...interface{}) {
+		var format string
+		for i := 0; i < len(args); i++ {
+			format += "%v"
+		}
+		fmt.Printf(format, args...)
+	})
 	result := p.Init().Accept(v)
 
 	fmt.Println("result: ", result)

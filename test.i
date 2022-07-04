@@ -4,5 +4,5 @@ b=3
 c={"name":"lisa","age":18,"friends":["lili","sasa"]}
 nums = [1,2,3,"lisa",{"age":18}]
 d=c["friends"][0]
-
+print(d,nums)
 add(b,a)

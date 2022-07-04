@@ -7,10 +7,11 @@ import (
 )
 
 func (v *RuleEngineVisitor) VisitGetMapOrArrayValue(ctx *parser.GetMapOrArrayValueContext) interface{} {
-	//fmt.Println("VisitGetMapOrArrayValue:", ctx.GetText())
+	fmt.Println("VisitGetMapOrArrayValue:", ctx.GetText())
 
 	ctx.Identify().Accept(v)
-	for _, key := range ctx.AllIDENTIFY() {
+	for _, key := range ctx.AllMapKey() {
+		fmt.Println(key)
 		key.Accept(v)
 		//keyType := v.pop()
 		//switch keyType.(type) {
@@ -42,25 +43,28 @@ func (v *RuleEngineVisitor) VisitGetMapOrArrayValue(ctx *parser.GetMapOrArrayVal
 	return nil
 }
 
-func (v *RuleEngineVisitor) VisitKey(ctx *parser.KeyContext) interface{} {
-	fmt.Println("VisitKey:", ctx.GetText())
+func (v *RuleEngineVisitor) VisitMapKey(ctx *parser.MapKeyContext) interface{} {
+	fmt.Println("VisitMapKey:", ctx.GetText())
+
 	for i := 0; i < ctx.GetChildCount(); i++ {
 		child := ctx.GetChildOfType(i, nil)
 
-		//ty := reflect.TypeOf(child)
-		//fmt.Println(111, ty.String(), ty.Name())
+		ty := reflect.TypeOf(child)
+		fmt.Println(111, ty.String(), ty.Name())
 		child.Accept(v)
 
 		switch child.(type) {
 		case *parser.NUMContext:
-			v.handlerArray()
+			child.(*parser.NUMContext).Accept(v)
 		case *parser.STRINGContext:
-			v.HandlerMap()
+			child.(*parser.STRINGContext).Accept(v)
+		case *parser.IDENTIFYContext:
+			child.(*parser.IDENTIFYContext).Accept(v)
 		default:
 			ty := reflect.TypeOf(child)
 			v.setError(fmt.Errorf("无效的类型:%s", ty.String()))
 		}
 	}
-	v.VisitChildren(ctx)
+
 	return nil
 }

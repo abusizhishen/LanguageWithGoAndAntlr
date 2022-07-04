@@ -64,7 +64,6 @@ compareStatement
     |'(' compareStatement')' #COMPAREX
     ;
 
-key: stringValue|num ;
 num:NUM#NUM;
 boolValue:TRUE|FALSE;
 identify:IDENTIFY#IDENTIFY;
@@ -129,11 +128,12 @@ returnStatement:
     ;
 
 Str: '"' [a-zA-Z_0-9 ']+ '"' ;
-pair: mapKey=Str ':' valueType;
+mapKey:IDENTIFY|Str|NUM;
+pair: mapKey ':' valueType;
 mapValue
     :'{' (pair (',' pair)*)? '}'
     ;
-getMapOrArrayValue:identify ('[' IDENTIFY|Str|NUM ']')+;
+getMapOrArrayValue:identify ('['mapKey ']')+;
 funCall: identify'(' valueType (',' valueType)* ')';
 
 array:'[' (valueType (',' valueType)*)? ']';
